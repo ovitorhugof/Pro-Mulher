@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="420" height="500" viewBox="0 0 420 500" role="img" aria-label="Placeholder para foto de ambiente interno da Pró-Mulher">
+  <defs>
+    <linearGradient id="roomTwo" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#ebe1d2"/>
+      <stop offset="0.55" stop-color="#f8f4ec"/>
+      <stop offset="1" stop-color="#7f9484"/>
+    </linearGradient>
+  </defs>
+  <rect width="420" height="500" rx="16" fill="url(#roomTwo)"/>
+  <circle cx="210" cy="174" r="72" fill="#fffaf2" opacity="0.75"/>
+  <path d="M126 318h168c28 0 50 22 50 50v62H76v-62c0-28 22-50 50-50Z" fill="#201f1a" opacity="0.68"/>
+  <path d="M155 183c24 31 86 31 110 0" fill="none" stroke="#b98782" stroke-width="10" stroke-linecap="round" opacity="0.7"/>
+  <text x="210" y="408" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" font-weight="700" fill="#e0bd74">FOTO INTERNA</text>
+  <text x="210" y="434" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="13" fill="#f8f4ec">Substituir por imagem real</text>
+</svg>
