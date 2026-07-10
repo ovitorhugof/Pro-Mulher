@@ -113,38 +113,25 @@ button {
   gap: 24px;
 }
 
-.brand {
+.site-logo {
   display: inline-flex;
   align-items: center;
-  gap: 12px;
-  color: var(--text);
+  flex: 0 1 auto;
 }
 
-.brand-mark {
-  width: 44px;
-  height: 44px;
-  display: grid;
-  place-items: center;
-  border: 1px solid var(--gold);
-  border-radius: 50%;
-  color: var(--gold-strong);
-  font-family: Georgia, "Times New Roman", serif;
-  font-weight: 700;
-}
-
-.brand strong,
-.brand small {
+.site-logo img {
   display: block;
+  width: clamp(160px, 18vw, 232px);
+  height: auto;
+  object-fit: contain;
 }
 
-.brand strong {
-  font-family: Georgia, "Times New Roman", serif;
-  font-size: 1.18rem;
+.footer-logo {
+  margin-bottom: 14px;
 }
 
-.brand small {
-  color: var(--text-muted);
-  font-size: 0.78rem;
+.footer-logo img {
+  width: clamp(178px, 20vw, 260px);
 }
 
 .main-nav {
@@ -954,12 +941,12 @@ textarea.is-invalid {
     min-height: 70px;
   }
 
-  .brand small {
-    max-width: 168px;
-  }
-
   .main-nav {
     top: 70px;
+  }
+
+  .site-logo img {
+    width: clamp(136px, 44vw, 170px);
   }
 
   .section {
