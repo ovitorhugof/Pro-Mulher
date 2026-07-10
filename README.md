@@ -50,12 +50,12 @@ Importante: essa URL temporária está em `sitemap.xml`, `robots.txt`, `index.ht
 
 Após publicar, atualize as URLs de produção em:
 
-- `index.html`: `canonical`, `og:url` e a futura `og:image` quando `assets/img/og-pro-mulher.jpg` existir.
+- `index.html`: `canonical`, `og:url` e `og:image`.
 - `pages/politica-privacidade.html`: `canonical`.
 - `robots.txt`: URL do sitemap.
 - `sitemap.xml`: URLs das páginas.
 
-## 4. Trocar imagens da clínica e logo da Unimed
+## 4. Trocar imagens, logo da clínica e logo da Unimed
 
 Os placeholders estão em `./assets/img`:
 
@@ -71,6 +71,20 @@ Exemplo:
 <img src="./assets/img/foto-clinica.jpg" alt="Recepção da clínica Pró-Mulher" width="540" height="640">
 ```
 
+### Logo da clínica
+
+No `index.html`, procure os blocos com a classe `brand`. Eles usam temporariamente o marcador `PM`. Substitua por uma imagem da logo oficial, se desejar:
+
+```html
+<img src="./assets/img/logo-promulher.png" alt="Pró-Mulher" width="160" height="48">
+```
+
+Na página de privacidade, use o caminho relativo a partir da pasta `pages`:
+
+```html
+<img src="../assets/img/logo-promulher.png" alt="Pró-Mulher" width="160" height="48">
+```
+
 ### Logo da Unimed
 
 Na seção `#clinica`, procure o elemento com a classe `unimed-slot` e substitua o texto `Logo Unimed` pela imagem autorizada:
@@ -78,41 +92,6 @@ Na seção `#clinica`, procure o elemento com a classe `unimed-slot` e substitua
 ```html
 <img src="./assets/img/logo-unimed.png" alt="Unimed" width="132" height="56">
 ```
-
-## Identidade visual
-
-A logo principal do site deve ficar em `assets/img/logo-pro-mulher.png`. O favicon oficial deve ficar em `assets/icons/favicon.png`. Mantenha esses nomes e caminhos para evitar quebras no GitHub Pages, na Vercel e nas páginas dentro de `pages`.
-
-Para substituir a logo, troque o arquivo mantendo o mesmo nome `logo-pro-mulher.png`. A imagem precisa estar otimizada para web, preferencialmente em PNG otimizado; WebP pode ser usado futuramente como alternativa, e SVG somente se existir uma versão vetorial oficial. Evite arquivos excessivamente grandes para não prejudicar o carregamento.
-
-A transparência da logo precisa ser real no próprio arquivo. Não use CSS para esconder fundo branco ou quadriculado. O favicon deve usar somente o símbolo da marca; a logo principal pode conter símbolo e nome.
-
-O favicon principal deve ser referenciado como:
-
-```html
-<link rel="icon" type="image/png" href="./assets/icons/favicon.png">
-```
-
-Em páginas dentro de `pages`, use:
-
-```html
-<link rel="icon" type="image/png" href="../assets/icons/favicon.png">
-```
-
-Somente adicione variações como `favicon-32x32.png`, `favicon-16x16.png` ou `apple-touch-icon.png` se esses arquivos existirem em `assets/icons`.
-
-Para compartilhamento em WhatsApp, Facebook e outras redes, crie futuramente uma imagem em `assets/img/og-pro-mulher.jpg`, com aproximadamente 1200 x 630 pixels. Não use diretamente a logo horizontal como imagem principal de compartilhamento se ela não tiver proporção adequada.
-
-Navegadores costumam armazenar favicon em cache. Se a troca não aparecer imediatamente, atualize com `Ctrl + F5`, abra em aba anônima, limpe o cache do navegador, teste a URL direta do favicon e aguarde a atualização do GitHub Pages.
-
-- [ ] Logo oficial adicionada em assets/img/logo-pro-mulher.png
-- [ ] Favicon adicionado em assets/icons/favicon.png
-- [ ] Fundo transparente verificado
-- [ ] Logo testada em desktop
-- [ ] Logo testada em celular
-- [ ] Favicon testado em aba anônima
-- [ ] Caminhos testados no GitHub Pages
-- [ ] Imagem Open Graph criada futuramente
 
 ## 5. Configurar o formulário de contato
 
