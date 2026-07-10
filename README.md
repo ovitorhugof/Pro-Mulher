@@ -1,10 +1,10 @@
-# Pró-Mulher
+# Dra. Lélia Moreira Toledo
 
-Site institucional estático da clínica Pró-Mulher, da Dra. Lélia Moreira Toledo, desenvolvido com HTML, CSS e JavaScript puro.
+Site institucional estático da Dra. Lélia Moreira Toledo, ginecologista em Boa Esperança MG, desenvolvido com HTML, CSS e JavaScript puro.
 
-O projeto está preparado para publicação no GitHub Pages e também pode ser publicado futuramente na Vercel.
+O projeto está preparado para publicação no GitHub Pages e também pode ser publicado futuramente na Vercel. Não há dependências externas de build.
 
- <!--## 1. Rodar o site localmente
+## Rodar localmente
 
 Opção simples: abra o arquivo `index.html` diretamente no navegador.
 
@@ -20,103 +20,83 @@ Depois acesse:
 http://localhost:8080
 ```
 
-Se estiver usando VS Code, a extensão Live Server também funciona bem.
+## Publicar
 
-## 2. Publicar no GitHub Pages
-
-1. Crie um repositório no GitHub, por exemplo `pro-mulher`.
-2. Envie os arquivos do projeto para a branch `main`.
-3. No GitHub, acesse `Settings > Pages`.
-4. Em `Build and deployment`, selecione `Deploy from a branch`.
-5. Escolha a branch `main` e a pasta `/root`.
-6. Salve e aguarde a publicação.
-
-A URL temporária esperada será parecida com:
+Para GitHub Pages, envie os arquivos para a branch configurada e publique a pasta raiz do repositório. A URL temporária esperada será parecida com:
 
 ```text
 https://SEU-USUARIO.github.io/pro-mulher/
 ```
 
-Importante: essa URL temporária está em `sitemap.xml`, `robots.txt`, `index.html` e `pages/politica-privacidade.html`. Altere esses endereços quando o domínio real ou a URL definitiva da Vercel estiverem definidos.
-
-## 3. Publicar na Vercel
-
-1. Crie uma conta ou acesse a Vercel.
-2. Clique em `Add New > Project`.
-3. Importe o repositório do GitHub.
-4. Como o projeto é HTML/CSS/JS puro, não é necessário configurar framework.
-5. Deixe o diretório de saída vazio ou como padrão.
-6. Publique o projeto.
-
-Após publicar, atualize as URLs de produção em:
+Após publicar em domínio definitivo ou na Vercel, atualize:
 
 - `index.html`: `canonical`, `og:url` e a futura `og:image` quando `assets/img/og-pro-mulher.jpg` existir.
 - `pages/politica-privacidade.html`: `canonical`.
 - `robots.txt`: URL do sitemap.
 - `sitemap.xml`: URLs das páginas.
 
-## 4. Trocar imagens da clínica e logo da Unimed
+## Identidade visual
 
-Os placeholders estão em `./assets/img`:
+A logomarca principal fica em `assets/img/logo-pro-mulher.png` e deve manter esse caminho para não quebrar as referências do site. Ela deve preservar proporção, cores douradas, transparência real e otimização para web.
 
-- `./assets/img/hero-placeholder.svg`: imagem principal da Home.
-- `./assets/img/clinic-placeholder-1.svg`: foto da recepção, fachada ou sala de espera.
-- `./assets/img/clinic-placeholder-2.svg`: foto de ambiente interno.
+O favicon atual usa o monograma `LM` e fica em:
 
-Para trocar, salve as fotos reais em `./assets/img` e atualize os caminhos no `index.html`.
+```text
+assets/icons/favicon-lm.svg
+```
+
+O ícone compacto legado `assets/icons/favicon.svg` também foi atualizado para `LM`, mas as páginas usam `favicon-lm.svg`.
+
+O ícone do WhatsApp fica em:
+
+```text
+assets/icons/whatsapp.svg
+```
+
+Ele não possui fundo próprio; a cor é herdada via `currentColor`, e o fundo verde pertence ao botão flutuante.
+
+O ícone do Instagram fica em:
+
+```text
+assets/icons/instagram.svg
+```
+
+O perfil oficial exibido no site é `@lelia.m.toledo`.
+
+Para compartilhamento em WhatsApp, Facebook e outras redes, crie futuramente uma imagem em `assets/img/og-pro-mulher.jpg`, com aproximadamente 1200 x 630 pixels. Não use diretamente a logomarca horizontal como imagem principal de compartilhamento se ela não tiver proporção adequada.
+
+Navegadores costumam armazenar favicon em cache. Se a troca não aparecer imediatamente, atualize com `Ctrl + F5`, abra em aba anônima, limpe o cache do navegador, teste a URL direta do favicon e aguarde a atualização do GitHub Pages.
+
+## Imagens
+
+Os placeholders estão em `assets/img`:
+
+- `hero-placeholder.svg`: imagem principal da Home.
+- `clinic-placeholder-1.svg`: foto da recepção, fachada ou sala de espera.
+- `clinic-placeholder-2.svg`: foto de ambiente interno.
+
+Para trocar, salve as fotos reais em `assets/img` e atualize os caminhos no `index.html`.
 
 Exemplo:
 
 ```html
-<img src="./assets/img/foto-clinica.jpg" alt="Recepção da clínica Pró-Mulher" width="540" height="640">
+<img src="./assets/img/foto-consultorio.jpg" alt="Recepção do consultório" width="540" height="640">
 ```
 
-### Logo da Unimed
+Na seção `#clinica`, o elemento `.unimed-slot` reserva espaço para inserir uma imagem autorizada da Unimed, caso exista.
 
-Na seção `#clinica`, procure o elemento com a classe `unimed-slot` e substitua o texto `Logo Unimed` pela imagem autorizada:
+## Horário de atendimento
 
-```html
-<img src="./assets/img/logo-unimed.png" alt="Unimed" width="132" height="56">
-```
+O horário oficial exibido no site é:
 
-## Identidade visual
+- Segunda a quinta-feira: 8h às 16h.
+- Sexta-feira: 8h às 11h.
 
-A logo principal do site deve ficar em `assets/img/logo-pro-mulher.png`. O favicon oficial deve ficar em `assets/icons/favicon.png`. Mantenha esses nomes e caminhos para evitar quebras no GitHub Pages, na Vercel e nas páginas dentro de `pages`.
+Não há atendimento informado para sábados, domingos ou feriados.
 
-Para substituir a logo, troque o arquivo mantendo o mesmo nome `logo-pro-mulher.png`. A imagem precisa estar otimizada para web, preferencialmente em PNG otimizado; WebP pode ser usado futuramente como alternativa, e SVG somente se existir uma versão vetorial oficial. Evite arquivos excessivamente grandes para não prejudicar o carregamento.
+## Formulário
 
-A transparência da logo precisa ser real no próprio arquivo. Não use CSS para esconder fundo branco ou quadriculado. O favicon deve usar somente o símbolo da marca; a logo principal pode conter símbolo e nome.
-
-O favicon principal deve ser referenciado como:
-
-```html
-<link rel="icon" type="image/png" href="./assets/icons/favicon.png">
-```
-
-Em páginas dentro de `pages`, use:
-
-```html
-<link rel="icon" type="image/png" href="../assets/icons/favicon.png">
-```
-
-Somente adicione variações como `favicon-32x32.png`, `favicon-16x16.png` ou `apple-touch-icon.png` se esses arquivos existirem em `assets/icons`.
-
-Para compartilhamento em WhatsApp, Facebook e outras redes, crie futuramente uma imagem em `assets/img/og-pro-mulher.jpg`, com aproximadamente 1200 x 630 pixels. Não use diretamente a logo horizontal como imagem principal de compartilhamento se ela não tiver proporção adequada.
-
-Navegadores costumam armazenar favicon em cache. Se a troca não aparecer imediatamente, atualize com `Ctrl + F5`, abra em aba anônima, limpe o cache do navegador, teste a URL direta do favicon e aguarde a atualização do GitHub Pages.
-
-- [ ] Logo oficial adicionada em assets/img/logo-pro-mulher.png
-- [ ] Favicon adicionado em assets/icons/favicon.png
-- [ ] Fundo transparente verificado
-- [ ] Logo testada em desktop
-- [ ] Logo testada em celular
-- [ ] Favicon testado em aba anônima
-- [ ] Caminhos testados no GitHub Pages
-- [ ] Imagem Open Graph criada futuramente
-
-## 5. Configurar o formulário de contato
-
-O formulário usa FormSubmit, uma solução simples para sites estáticos:
+O formulário usa FormSubmit:
 
 ```html
 action="https://formsubmit.co/promulherbe@gmail.com"
@@ -124,18 +104,7 @@ action="https://formsubmit.co/promulherbe@gmail.com"
 
 No primeiro envio real, o FormSubmit enviará uma mensagem para `promulherbe@gmail.com` pedindo confirmação do endereço. Após confirmar, os próximos contatos chegarão normalmente por e-mail.
 
-O formulário já inclui:
-
-- Nome.
-- Telefone/WhatsApp.
-- E-mail.
-- Serviço de interesse.
-- Mensagem.
-- Validação básica em JavaScript.
-- Máscara de telefone brasileiro.
-- Feedback visual de envio.
-
-## Estrutura de pastas
+## Estrutura
 
 ```text
 assets/
@@ -153,12 +122,26 @@ sitemap.xml
 README.md
 ```
 
+## Checklist
+
+- [ ] Logomarca oficial presente em `assets/img/logo-pro-mulher.png`
+- [ ] Favicon LM configurado em `assets/icons/favicon-lm.svg`
+- [ ] Ícone do WhatsApp configurado em `assets/icons/whatsapp.svg`
+- [ ] Ícone do Instagram configurado em `assets/icons/instagram.svg`
+- [ ] Horários oficiais revisados no site
+- [ ] Mapa testado em desktop e celular
+- [ ] Header testado em desktop amplo
+- [ ] Menu mobile testado
+- [ ] Favicon testado em aba anônima
+- [ ] Caminhos testados no GitHub Pages
+- [ ] Imagem Open Graph criada futuramente
+
 ## Checklist de publicação Git
 
 ```bash
 git init
 git add .
-git commit -m "Primeira versão do site Pró-Mulher"
+git commit -m "Atualiza site institucional da Dra. Lélia Moreira Toledo"
 git branch -M main
 git remote add origin URL_DO_REPOSITORIO
 git push -u origin main

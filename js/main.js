@@ -122,13 +122,32 @@ const initReveal = () => {
 const initCookies = () => {
   if (!cookieBanner || !cookieAccept) return;
 
-  if (localStorage.getItem("promulherCookiesAccepted") !== "true") {
+  const updateCookieOffset = () => {
+    const spacing = 18;
+    document.documentElement.style.setProperty(
+      "--cookie-banner-offset",
+      `${cookieBanner.offsetHeight + spacing}px`
+    );
+  };
+
+  if (localStorage.getItem("leliaCookiesAccepted") !== "true") {
     cookieBanner.classList.add("is-visible");
+    document.body.classList.add("cookies-visible");
+    updateCookieOffset();
+  }
+
+  window.addEventListener("resize", updateCookieOffset, { passive: true });
+
+  if ("ResizeObserver" in window) {
+    const cookieObserver = new ResizeObserver(updateCookieOffset);
+    cookieObserver.observe(cookieBanner);
   }
 
   cookieAccept.addEventListener("click", () => {
-    localStorage.setItem("promulherCookiesAccepted", "true");
+    localStorage.setItem("leliaCookiesAccepted", "true");
     cookieBanner.classList.remove("is-visible");
+    document.body.classList.remove("cookies-visible");
+    document.documentElement.style.removeProperty("--cookie-banner-offset");
   });
 };
 
