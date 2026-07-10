@@ -4,7 +4,7 @@ Site institucional estático da clínica Pró-Mulher, da Dra. Lélia Moreira Tol
 
 O projeto está preparado para publicação no GitHub Pages e também pode ser publicado futuramente na Vercel.
 
-## 1. Rodar o site localmente
+ <!--## 1. Rodar o site localmente
 
 Opção simples: abra o arquivo `index.html` diretamente no navegador.
 
