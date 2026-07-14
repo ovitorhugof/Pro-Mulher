@@ -16,6 +16,8 @@
   --shadow: 0 24px 70px rgba(0, 0, 0, 0.32);
   --radius: 8px;
   --max: 1180px;
+  --container-padding: clamp(20px, 5vw, 72px);
+  --section-space: clamp(72px, 9vw, 112px);
 }
 
 *,
@@ -35,6 +37,7 @@ body {
   font-family: "Segoe UI", Arial, sans-serif;
   line-height: 1.6;
   text-rendering: optimizeLegibility;
+  overflow-x: hidden;
 }
 
 body.menu-open {
@@ -86,7 +89,7 @@ button {
 }
 
 .container {
-  width: min(calc(100% - 32px), var(--max));
+  width: min(calc(100% - (var(--container-padding) * 2)), var(--max));
   margin-inline: auto;
 }
 
@@ -117,25 +120,45 @@ button {
   gap: 24px;
 }
 
-.site-logo {
+.site-brand {
   display: inline-flex;
   align-items: center;
+  gap: 12px;
   flex: 0 1 auto;
+  color: var(--text);
 }
 
-.site-logo img {
+.site-brand img {
   display: block;
-  width: clamp(160px, 18vw, 232px);
-  height: auto;
+  width: 64px;
+  height: 40px;
   object-fit: contain;
 }
 
-.footer-logo {
+.site-brand__text {
+  display: grid;
+  line-height: 1.08;
+}
+
+.site-brand__text strong {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.05rem;
+}
+
+.site-brand__text small {
+  margin-top: 4px;
+  color: var(--text-muted);
+  font-size: 0.76rem;
+  letter-spacing: 0.04em;
+}
+
+.footer-brand {
   margin-bottom: 14px;
 }
 
-.footer-logo img {
-  width: clamp(178px, 20vw, 260px);
+.footer-brand img {
+  width: 68px;
+  height: 42px;
 }
 
 .main-nav {
@@ -189,7 +212,7 @@ button {
 }
 
 .section {
-  padding: 104px 0;
+  padding: var(--section-space) 0;
 }
 
 .section-dark {
@@ -204,8 +227,8 @@ button {
 }
 
 .hero {
-  min-height: 100vh;
-  padding: 130px 0 72px;
+  min-height: min(900px, 100svh);
+  padding: 124px 0 72px;
   display: grid;
   align-items: center;
 }
@@ -244,11 +267,15 @@ h3 {
 
 h1 {
   max-width: 760px;
-  font-size: clamp(2.75rem, 7vw, 5.85rem);
+  font-size: clamp(2.65rem, 6.2vw, 5.35rem);
+  letter-spacing: -0.035em;
+  text-wrap: balance;
 }
 
 h2 {
-  font-size: clamp(2rem, 4vw, 3.35rem);
+  font-size: clamp(2rem, 3.8vw, 3.25rem);
+  letter-spacing: -0.025em;
+  text-wrap: balance;
 }
 
 h3 {
@@ -260,6 +287,7 @@ h3 {
   margin: 24px 0 0;
   color: var(--text-muted);
   font-size: 1.18rem;
+  line-height: 1.65;
 }
 
 .hero-actions {
@@ -478,6 +506,87 @@ h3 {
   color: var(--ink-muted);
 }
 
+.congress-section {
+  background: var(--bg-soft);
+  color: var(--text);
+}
+
+.congress-section .section-heading {
+  max-width: 780px;
+}
+
+.congress-section .section-heading p:not(.eyebrow) {
+  color: var(--text-muted);
+}
+
+.congress-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(18px, 2.5vw, 30px);
+  margin-top: 48px;
+}
+
+.congress-card {
+  min-width: 0;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--surface);
+  box-shadow: var(--shadow);
+}
+
+.congress-card__placeholder,
+.congress-card img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+}
+
+.congress-card img {
+  object-fit: cover;
+}
+
+.congress-card__placeholder {
+  display: grid;
+  place-items: center;
+  background:
+    linear-gradient(135deg, transparent 49.5%, rgba(224, 189, 116, 0.15) 50%, transparent 50.5%),
+    radial-gradient(circle at center, rgba(224, 189, 116, 0.12), transparent 54%),
+    #151511;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.congress-card__content {
+  padding: 24px;
+}
+
+.congress-card__status {
+  display: inline-block;
+  margin-bottom: 18px;
+  padding: 6px 8px;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  color: var(--gold-strong);
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.congress-card__year {
+  display: block;
+  margin-bottom: 8px;
+  color: var(--text-muted);
+  font-size: 0.88rem;
+}
+
+.congress-card p {
+  margin: 14px 0 0;
+  color: var(--text-muted);
+}
+
 .clinic-section {
   background: #fbf6ee;
 }
@@ -526,15 +635,25 @@ h3 {
   font-size: 1.05rem;
 }
 
-.unimed-slot {
-  min-width: 132px;
+.unimed-brand {
+  width: clamp(132px, 18vw, 180px);
   min-height: 56px;
   display: grid;
   place-items: center;
-  border: 1px dashed rgba(127, 148, 132, 0.7);
+  padding: 10px 12px;
+  border: 1px solid rgba(0, 153, 93, 0.24);
   border-radius: var(--radius);
-  color: #4d6a56;
-  font-weight: 800;
+  background: #ffffff;
+}
+
+.unimed-brand img {
+  display: block;
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  max-height: 48px;
+  object-fit: contain;
+  object-position: center;
 }
 
 .faq-section {
@@ -602,7 +721,7 @@ h3 {
 }
 
 .contact-grid {
-  grid-template-columns: minmax(0, 0.86fr) minmax(360px, 1fr);
+  grid-template-columns: minmax(300px, 0.86fr) minmax(0, 1fr);
   align-items: start;
 }
 
@@ -685,75 +804,8 @@ h3 {
   min-width: 0;
 }
 
-.contact-form {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 16px;
-  padding: 28px;
-  border-radius: var(--radius);
-  background: var(--bg);
-  color: var(--text);
-  box-shadow: var(--shadow);
-}
-
-.form-row {
-  display: grid;
-  gap: 7px;
-}
-
-.form-row.full,
-.contact-form .full {
-  grid-column: 1 / -1;
-}
-
-label {
-  color: var(--text-muted);
-  font-size: 0.9rem;
-  font-weight: 700;
-}
-
-input,
-select,
-textarea {
-  width: 100%;
-  border: 1px solid rgba(255, 255, 255, 0.16);
-  border-radius: var(--radius);
-  background: rgba(255, 255, 255, 0.06);
-  color: var(--text);
-  padding: 13px 14px;
-}
-
-select option {
-  color: var(--ink);
-}
-
-textarea {
-  resize: vertical;
-  min-height: 130px;
-}
-
-input.is-invalid,
-select.is-invalid,
-textarea.is-invalid {
-  border-color: var(--rose);
-}
-
-.field-error {
-  min-height: 18px;
-  color: #f0a39c;
-  font-size: 0.78rem;
-}
-
-.form-status {
-  grid-column: 1 / -1;
-  min-height: 24px;
-  margin: 0;
-  color: var(--gold-strong);
-  font-weight: 700;
-}
-
 .map-wrap {
-  margin-top: 46px;
+  min-width: 0;
   border-radius: var(--radius);
   overflow: hidden;
   box-shadow: 0 18px 50px rgba(24, 23, 19, 0.14);
@@ -761,7 +813,7 @@ textarea.is-invalid {
 
 .map-wrap iframe {
   width: 100%;
-  min-height: 450px;
+  min-height: 620px;
 }
 
 .site-footer {
@@ -816,6 +868,9 @@ textarea.is-invalid {
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  padding: 0;
+  margin: 0;
+  border: 0;
   border-radius: 50%;
   background: #25d366;
   color: #fff;
@@ -839,11 +894,26 @@ body.cookies-visible .whatsapp-float {
 
 .whatsapp-float svg,
 .whatsapp-float img {
-  width: 29px;
-  height: 29px;
   display: block;
-  flex-shrink: 0;
+  width: 30px;
+  height: 30px;
+  max-width: none;
+  max-height: none;
+  flex: 0 0 auto;
   object-fit: contain;
+  object-position: center;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  opacity: 1;
+  filter: none;
+  transform: none;
+}
+
+.whatsapp-float:focus-visible {
+  outline-color: #ffffff;
 }
 
 .cookie-banner {
@@ -944,6 +1014,8 @@ body.cookies-visible .whatsapp-float {
     top: 78px;
     right: 16px;
     left: 16px;
+    max-height: calc(100dvh - 94px);
+    overflow-y: auto;
     display: grid;
     gap: 4px;
     padding: 16px;
@@ -991,6 +1063,15 @@ body.cookies-visible .whatsapp-float {
     gap: 42px;
   }
 
+  .hero {
+    min-height: auto;
+    padding-top: 126px;
+  }
+
+  .congress-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
   .hero-media {
     justify-self: start;
     width: min(100%, 560px);
@@ -1013,11 +1094,35 @@ body.cookies-visible .whatsapp-float {
   .footer-grid {
     grid-template-columns: 1fr;
   }
+
+  .map-wrap iframe {
+    min-height: 420px;
+  }
+}
+
+@media (max-width: 768px) {
+  .whatsapp-float {
+    right: calc(16px + env(safe-area-inset-right));
+    bottom: calc(16px + env(safe-area-inset-bottom));
+    width: 54px;
+    height: 54px;
+  }
+
+  body.cookies-visible .whatsapp-float {
+    bottom: calc(var(--cookie-banner-offset, 116px) + 16px + env(safe-area-inset-bottom));
+  }
+
+  .whatsapp-float svg,
+  .whatsapp-float img {
+    width: 27px;
+    height: 27px;
+  }
 }
 
 @media (max-width: 680px) {
-  .container {
-    width: min(calc(100% - 24px), var(--max));
+  :root {
+    --container-padding: clamp(18px, 5.5vw, 24px);
+    --section-space: clamp(64px, 18vw, 80px);
   }
 
   .header-inner {
@@ -1029,26 +1134,86 @@ body.cookies-visible .whatsapp-float {
     top: 70px;
   }
 
-  .site-logo img {
-    width: clamp(136px, 44vw, 170px);
+  .site-brand {
+    gap: 8px;
   }
 
-  .section {
-    padding: 76px 0;
+  .site-brand img {
+    width: 52px;
+    height: 34px;
+  }
+
+  .site-brand__text strong {
+    font-size: 0.95rem;
+  }
+
+  .site-brand__text small {
+    font-size: 0.69rem;
   }
 
   .hero {
-    min-height: auto;
-    padding-top: 112px;
+    padding: 108px 0 68px;
   }
 
-  h1 {
-    font-size: 2.7rem;
+  .hero-grid,
+  .split,
+  .clinic-grid,
+  .contact-grid {
+    gap: 34px;
+  }
+
+  .hero-title {
+    max-width: 100%;
+    font-size: clamp(2.35rem, 11vw, 3.45rem);
+    line-height: 1.03;
+    letter-spacing: -0.03em;
+  }
+
+  h2 {
+    font-size: clamp(1.9rem, 9vw, 2.55rem);
+    line-height: 1.1;
+  }
+
+  h3 {
+    font-size: clamp(1.2rem, 6vw, 1.4rem);
+  }
+
+  body,
+  .section-heading p:not(.eyebrow),
+  .clinic-copy p:not(.eyebrow) {
+    font-size: 1rem;
+    line-height: 1.65;
+  }
+
+  .hero-lead {
+    margin-top: 20px;
+    font-size: 1.04rem;
   }
 
   .hero-actions,
   .btn {
     width: 100%;
+  }
+
+  .hero-actions {
+    display: grid;
+    gap: 12px;
+    margin-top: 28px;
+  }
+
+  .trust-list {
+    gap: 12px;
+    margin-top: 32px;
+  }
+
+  .services-grid,
+  .congress-grid,
+  .faq-list {
+    margin-top: 32px;
+  }
+
+  .congress-grid {
+    grid-template-columns: 1fr;
   }
 
   .trust-list li,
@@ -1063,7 +1228,8 @@ body.cookies-visible .whatsapp-float {
   }
 
   .content-panel,
-  .contact-form {
+  .service-card,
+  .congress-card__content {
     padding: 22px;
   }
 
@@ -1087,28 +1253,34 @@ body.cookies-visible .whatsapp-float {
     flex-direction: column;
   }
 
-  .contact-form {
-    grid-template-columns: 1fr;
+  .unimed-brand {
+    width: 100%;
   }
 
   .map-wrap iframe {
     min-height: 340px;
   }
 
-  .whatsapp-float {
-    right: calc(16px + env(safe-area-inset-right));
-    bottom: calc(16px + env(safe-area-inset-bottom));
-    width: 54px;
-    height: 54px;
+  .cookie-banner {
+    width: calc(100% - 24px);
+    bottom: 12px;
+    max-height: calc(100dvh - 24px);
+    overflow-y: auto;
   }
 
-  body.cookies-visible .whatsapp-float {
-    bottom: calc(var(--cookie-banner-offset, 116px) + 16px + env(safe-area-inset-bottom));
+  .cookie-banner .btn {
+    width: 100%;
+  }
+}
+
+@media (max-width: 380px) {
+  .site-brand__text small {
+    display: none;
   }
 
-  .whatsapp-float svg,
-  .whatsapp-float img {
-    width: 27px;
-    height: 27px;
+  .hero-title {
+    font-size: clamp(2.08rem, 10.7vw, 2.55rem);
+    line-height: 1.05;
   }
+
 }

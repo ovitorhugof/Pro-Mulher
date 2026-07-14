@@ -15,7 +15,7 @@
   <meta property="og:title" content="Dra. Lélia Moreira Toledo | Ginecologista em Boa Esperança MG">
   <meta property="og:description" content="Consultas ginecológicas, exames preventivos e ultrassonografias em Boa Esperança, Minas Gerais.">
   <meta property="og:url" content="https://SEU-USUARIO.github.io/pro-mulher/">
-  <!-- Imagem Open Graph futura: crie ./assets/img/og-pro-mulher.jpg com aproximadamente 1200x630px antes de adicionar og:image. -->
+  <!-- Adicione futuramente uma imagem Open Graph institucional confirmada, com aproximadamente 1200x630px. -->
   <meta property="og:site_name" content="Dra. Lélia Moreira Toledo">
 
   <link rel="canonical" href="https://SEU-USUARIO.github.io/pro-mulher/">
@@ -29,7 +29,6 @@
       "@type": "MedicalClinic",
       "name": "Consultório da Dra. Lélia Moreira Toledo",
       "description": "Atendimento ginecológico em Boa Esperança MG, com consultas ginecológicas, exames preventivos e ultrassonografias.",
-      "logo": "./assets/img/logo-pro-mulher.png",
       "medicalSpecialty": ["Gynecologic", "Obstetric", "Ultrasound"],
       "telephone": "+5535988412574",
       "email": "promulherbe@gmail.com",
@@ -60,15 +59,9 @@
 
   <header class="site-header" data-header>
     <div class="container header-inner">
-      <a class="site-logo" href="./index.html" aria-label="Página inicial da Dra. Lélia Moreira Toledo">
-        <img
-          src="./assets/img/logo-pro-mulher.png"
-          alt="Identidade visual do consultório da Dra. Lélia Moreira Toledo"
-          width="866"
-          height="288"
-          loading="eager"
-          decoding="async"
-        >
+      <a class="site-brand" href="#home" aria-label="Página inicial da Dra. Lélia Moreira Toledo">
+        <img src="./assets/icons/logo-lm.svg" alt="" aria-hidden="true" width="72" height="44">
+        <span class="site-brand__text"><strong>Dra. Lélia</strong><small>Moreira Toledo</small></span>
       </a>
 
       <button class="menu-toggle" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="menu-principal" data-menu-toggle>
@@ -78,10 +71,11 @@
       </button>
 
       <nav class="main-nav" id="menu-principal" aria-label="Menu principal" data-nav>
-        <a href="#home">Home</a>
+        <a href="#home">Início</a>
         <a href="#sobre">Sobre</a>
         <a href="#especialidades">Especialidades</a>
         <a href="#clinica">Clínica</a>
+        <a href="#congressos">Congressos</a>
         <a href="#duvidas">Dúvidas</a>
         <a href="#contato">Contato</a>
       </nav>
@@ -93,7 +87,7 @@
       <div class="container hero-grid">
         <div class="hero-copy reveal">
           <p class="eyebrow">Clínica ginecológica em Boa Esperança - MG</p>
-          <h1>Cuidado, acolhimento e saúde feminina em todas as fases da vida</h1>
+          <h1 class="hero-title">Cuidado, acolhimento e saúde feminina em todas as fases da vida</h1>
           <p class="hero-lead">Atendimento ginecológico humanizado com foco em prevenção, diagnóstico e bem-estar da mulher.</p>
           <div class="hero-actions">
             <a class="btn btn-primary" href="https://wa.me/5535988412574?text=Ol%C3%A1%2C%20gostaria%20de%20solicitar%20informa%C3%A7%C3%B5es%20e%20agendar%20um%20atendimento%20com%20a%20Dra.%20L%C3%A9lia%20Moreira%20Toledo." target="_blank" rel="noopener noreferrer">Agendar pelo WhatsApp</a>
@@ -184,11 +178,58 @@
               <span class="mini-label">Atendimento</span>
               <strong>Particular e Unimed</strong>
             </div>
-            <div class="unimed-slot" aria-label="Espaço para inserir a logo da Unimed">
-              Logo Unimed
+            <div class="unimed-brand">
+              <img
+                src="./assets/img/logo-unimed.png"
+                alt="Unimed"
+                width="3675"
+                height="1206"
+                loading="lazy"
+                decoding="async"
+              >
             </div>
-            <!-- Substitua o texto acima pela logo oficial da Unimed, se autorizado. -->
           </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section congress-section" id="congressos">
+      <div class="container">
+        <div class="section-heading centered reveal">
+          <p class="eyebrow">Formação continuada</p>
+          <h2>Congressos e atualização profissional</h2>
+          <p>A participação contínua em congressos, jornadas e cursos contribui para uma prática médica atualizada, ética e alinhada aos avanços da Ginecologia, Obstetrícia e Ultrassonografia.</p>
+        </div>
+
+        <!-- Conteúdo temporário: substituir somente por informações e fotografias reais confirmadas. -->
+        <div class="congress-grid">
+          <article class="congress-card reveal">
+            <div class="congress-card__placeholder" aria-hidden="true"><span>Foto do congresso</span></div>
+            <div class="congress-card__content">
+              <span class="congress-card__status">Conteúdo em atualização</span>
+              <span class="congress-card__year">Ano do evento</span>
+              <h3>Nome do congresso ou jornada</h3>
+              <p>Espaço reservado para informações sobre a participação da Dra. Lélia em congressos e atividades de atualização profissional.</p>
+            </div>
+          </article>
+          <article class="congress-card reveal">
+            <div class="congress-card__placeholder" aria-hidden="true"><span>Foto do curso</span></div>
+            <div class="congress-card__content">
+              <span class="congress-card__status">Conteúdo em atualização</span>
+              <span class="congress-card__year">Ano do evento</span>
+              <h3>Curso de atualização médica</h3>
+              <p>Espaço reservado para registrar temas, conteúdos e experiências relacionadas à atualização profissional.</p>
+            </div>
+          </article>
+          <article class="congress-card reveal">
+            <div class="congress-card__placeholder" aria-hidden="true"><span>Foto do encontro</span></div>
+            <div class="congress-card__content">
+              <span class="congress-card__status">Conteúdo em atualização</span>
+              <span class="congress-card__year">Ano do evento</span>
+              <h3>Encontro científico</h3>
+              <p>Espaço reservado para apresentar futuras participações em encontros científicos e educacionais.</p>
+            </div>
+          </article>
         </div>
       </div>
     </section>
@@ -204,7 +245,7 @@
           <div class="faq-item">
             <button type="button" aria-expanded="false">Como agendar uma consulta?</button>
             <div class="faq-answer">
-              <p>O agendamento pode ser feito pelo WhatsApp da clínica, pelo telefone ou pelo formulário de contato disponível nesta página.</p>
+              <p>O agendamento pode ser solicitado diretamente pelo WhatsApp ou pelo telefone da clínica.</p>
             </div>
           </div>
           <div class="faq-item">
@@ -257,6 +298,10 @@
               <span>E-mail</span>
               <strong>promulherbe@gmail.com</strong>
             </a>
+            <a href="tel:+5535988412574">
+              <span>Telefone</span>
+              <strong>(35) 98841-2574</strong>
+            </a>
             <a class="social-link" href="https://www.instagram.com/lelia.m.toledo?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" rel="noopener noreferrer" aria-label="Instagram da Dra. Lélia Moreira Toledo">
               <svg aria-hidden="true" focusable="false" width="22" height="22">
                 <use href="./assets/icons/instagram.svg#instagram-icon"></use>
@@ -264,10 +309,10 @@
               <span>Instagram</span>
               <strong>@lelia.m.toledo</strong>
             </a>
-            <div>
+            <a href="https://www.google.com/maps/search/?api=1&amp;query=Rua%20Francisco%20Oliveira%20Naves%2C%2031%2C%20Boa%20Esperan%C3%A7a%20MG" target="_blank" rel="noopener noreferrer">
               <span>Endereço</span>
               <strong>Rua Francisco Oliveira Naves, 31, Nova Era/Centro, Boa Esperança - MG</strong>
-            </div>
+            </a>
             <div class="contact-hours">
               <span>Horário de atendimento</span>
               <p>
@@ -282,54 +327,9 @@
           </address>
         </div>
 
-        <form class="contact-form reveal" action="https://formsubmit.co/promulherbe@gmail.com" method="POST" data-contact-form novalidate>
-          <!-- FormSubmit: no primeiro envio, confirme o endereço promulherbe@gmail.com pelo e-mail recebido. -->
-          <input type="hidden" name="_subject" value="Novo contato pelo site da Dra. Lélia Moreira Toledo">
-          <input type="hidden" name="_captcha" value="false">
-          <input type="hidden" name="_template" value="table">
-
-          <div class="form-row">
-            <label for="nome">Nome</label>
-            <input type="text" id="nome" name="nome" autocomplete="name" required>
-            <small class="field-error" aria-live="polite"></small>
-          </div>
-
-          <div class="form-row">
-            <label for="telefone">Telefone/WhatsApp</label>
-            <input type="tel" id="telefone" name="telefone" inputmode="tel" autocomplete="tel" placeholder="(35) 98841-2574" required data-phone>
-            <small class="field-error" aria-live="polite"></small>
-          </div>
-
-          <div class="form-row">
-            <label for="email">E-mail</label>
-            <input type="email" id="email" name="email" autocomplete="email" required>
-            <small class="field-error" aria-live="polite"></small>
-          </div>
-
-          <div class="form-row">
-            <label for="servico">Serviço de interesse</label>
-            <select id="servico" name="servico" required>
-              <option value="">Selecione</option>
-              <option>Consulta ginecológica</option>
-              <option>Exame preventivo</option>
-              <option>Ultrassonografia</option>
-            </select>
-            <small class="field-error" aria-live="polite"></small>
-          </div>
-
-          <div class="form-row full">
-            <label for="mensagem">Mensagem</label>
-            <textarea id="mensagem" name="mensagem" rows="5" required></textarea>
-            <small class="field-error" aria-live="polite"></small>
-          </div>
-
-          <button class="btn btn-primary full" type="submit">Enviar solicitação</button>
-          <p class="form-status" role="status" aria-live="polite" data-form-status></p>
-        </form>
-      </div>
-
-      <div class="container map-wrap reveal" aria-label="Mapa de localização do consultório da Dra. Lélia Moreira Toledo">
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3722.450930673697!2d-45.56236202395301!3d-21.094581175629514!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94b5759405f43bd7%3A0x2db23350d537d465!2sPr%C3%B3%20Mulher!5e0!3m2!1spt-BR!2sbr!4v1783698846942!5m2!1spt-BR!2sbr" width="600" height="450" style="border: 0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" title="Localização do consultório da Dra. Lélia Moreira Toledo"></iframe>
+        <div class="map-wrap reveal" aria-label="Mapa de localização do consultório da Dra. Lélia Moreira Toledo">
+          <iframe src="https://www.google.com/maps?q=Rua%20Francisco%20Oliveira%20Naves%2C%2031%2C%20Boa%20Esperan%C3%A7a%20MG&amp;output=embed" width="600" height="450" style="border: 0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" title="Localização do consultório da Dra. Lélia Moreira Toledo"></iframe>
+        </div>
       </div>
     </section>
   </main>
@@ -337,15 +337,9 @@
   <footer class="site-footer">
     <div class="container footer-grid">
       <div>
-        <a class="site-logo footer-logo" href="./index.html" aria-label="Página inicial da Dra. Lélia Moreira Toledo">
-          <img
-            src="./assets/img/logo-pro-mulher.png"
-            alt="Identidade visual do consultório da Dra. Lélia Moreira Toledo"
-            width="866"
-            height="288"
-            loading="lazy"
-            decoding="async"
-          >
+        <a class="site-brand footer-brand" href="#home" aria-label="Página inicial da Dra. Lélia Moreira Toledo">
+          <img src="./assets/icons/logo-lm.svg" alt="" aria-hidden="true" width="72" height="44" loading="lazy">
+          <span class="site-brand__text"><strong>Dra. Lélia</strong><small>Moreira Toledo</small></span>
         </a>
         <p>Clínica ginecológica em Boa Esperança - MG.</p>
       </div>
@@ -372,13 +366,11 @@
   </footer>
 
   <a class="whatsapp-float" href="https://wa.me/5535988412574?text=Ol%C3%A1%2C%20gostaria%20de%20solicitar%20informa%C3%A7%C3%B5es%20e%20agendar%20um%20atendimento%20com%20a%20Dra.%20L%C3%A9lia%20Moreira%20Toledo." target="_blank" rel="noopener noreferrer" aria-label="Agendar atendimento pelo WhatsApp com a Dra. Lélia Moreira Toledo" title="Agendar pelo WhatsApp">
-    <svg aria-hidden="true" focusable="false" width="29" height="29">
-      <use href="./assets/icons/whatsapp.svg#whatsapp-icon"></use>
-    </svg>
+    <img src="./assets/icons/whatsapp.svg" alt="" aria-hidden="true" width="30" height="30">
   </a>
 
   <div class="cookie-banner" data-cookie-banner role="dialog" aria-label="Aviso de cookies">
-    <p>Usamos cookies essenciais para melhorar sua navegação e lembrar suas preferências. Saiba mais na <a href="./pages/politica-privacidade.html">Política de Privacidade</a>.</p>
+    <p>Usamos armazenamento local essencial para lembrar sua preferência neste aviso. Saiba mais na <a href="./pages/politica-privacidade.html">Política de Privacidade</a>.</p>
     <button class="btn btn-primary" type="button" data-cookie-accept>Aceitar</button>
   </div>
 

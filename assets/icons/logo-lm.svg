@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="72" height="44" viewBox="0 0 72 44" role="img" aria-label="Monograma LM">
+  <title>Monograma LM</title>
+  <g fill="none" stroke="#e0bd74" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M8 7v28h17" stroke-width="3.2"/>
+    <path d="M30 35V8l13 18L56 8v27" stroke-width="3.2"/>
+    <path d="M63 7v28" stroke-width="1" opacity=".58"/>
+  </g>
+</svg>

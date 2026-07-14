@@ -1,115 +1,105 @@
 # Dra. Lélia Moreira Toledo
 
-Site institucional estático da Dra. Lélia Moreira Toledo, ginecologista em Boa Esperança MG, desenvolvido com HTML, CSS e JavaScript puro.
+Site institucional estático da Dra. Lélia Moreira Toledo, ginecologista em Boa Esperança, MG. Desenvolvido somente com HTML semântico, CSS e JavaScript puro, sem etapa de build.
 
-O projeto está preparado para publicação no GitHub Pages e também pode ser publicado futuramente na Vercel. Não há dependências externas de build.
+## Execução e publicação
 
-## Rodar localmente
-
-Opção simples: abra o arquivo `index.html` diretamente no navegador.
-
-Opção recomendada para testar como hospedagem estática:
+O site pode ser aberto diretamente pelo `index.html`. Para um teste local mais próximo da hospedagem estática, execute:
 
 ```bash
 python -m http.server 8080
 ```
 
-Depois acesse:
+Acesse `http://localhost:8080`. Os caminhos são relativos e compatíveis com GitHub Pages em subpasta e Vercel na raiz. Antes da publicação definitiva, substitua os valores provisórios de domínio em `canonical`, `og:url`, `robots.txt` e `sitemap.xml`.
+
+## Identidade temporária LM
+
+A identidade visual anterior deixou de ser referenciada. O placeholder institucional atual é o monograma dourado LM em:
 
 ```text
-http://localhost:8080
+assets/icons/logo-lm.svg
 ```
 
-## Publicar
+Ele acompanha o nome “Dra. Lélia Moreira Toledo” no cabeçalho e rodapé. Para trocar a identidade no futuro, substitua o SVG mantendo seu `viewBox` e proporção ou atualize os caminhos nas duas páginas e revise as dimensões em `.site-brand img`. Preserve o favicon LM ou atualize ambos com a mesma linguagem visual.
 
-Para GitHub Pages, envie os arquivos para a branch configurada e publique a pasta raiz do repositório. A URL temporária esperada será parecida com:
+Os arquivos de marca anteriores permanecem em `assets/img` apenas como backup e não devem ser reutilizados como identidade principal sem uma decisão posterior.
+
+## Marcas de terceiros
+
+A marca Unimed exibida na seção da clínica usa o arquivo oficial “Unimed Sem Box”, salvo localmente em:
 
 ```text
-https://SEU-USUARIO.github.io/pro-mulher/
+assets/img/logo-unimed.png
 ```
 
-Após publicar em domínio definitivo ou na Vercel, atualize:
+O arquivo foi obtido na área pública de downloads da Unimed Divinópolis. A marca não foi redesenhada nem alterada. Como os direitos de marca não são concedidos por uma licença aberta, a clínica deve confirmar que possui autorização para exibi-la como indicação de atendimento.
 
-- `index.html`: `canonical`, `og:url` e a futura `og:image` quando `assets/img/og-pro-mulher.jpg` existir.
-- `pages/politica-privacidade.html`: `canonical`.
-- `robots.txt`: URL do sitemap.
-- `sitemap.xml`: URLs das páginas.
+O símbolo do WhatsApp em `assets/icons/whatsapp.svg` usa o desenho vetorial do Simple Icons. O projeto Simple Icons é distribuído sob CC0 1.0, mas essa licença não concede direitos sobre marcas registradas; o ícone é usado apenas para identificar o link oficial de contato.
 
-## Identidade visual
+## Contato
 
-A logomarca principal fica em `assets/img/logo-pro-mulher.png` e deve manter esse caminho para não quebrar as referências do site. Ela deve preservar proporção, cores douradas, transparência real e otimização para web.
+O formulário e a integração de envio foram removidos. Os canais exibidos são:
 
-O favicon atual usa o monograma `LM` e fica em:
+- WhatsApp e telefone: `(35) 98841-2574`;
+- e-mail: `promulherbe@gmail.com`;
+- Instagram: `@lelia.m.toledo`;
+- endereço e Google Maps.
 
-```text
-assets/icons/favicon-lm.svg
-```
+A política de privacidade considera apenas contatos iniciados voluntariamente por serviços externos, o mapa, dados técnicos que podem ser tratados pela hospedagem e a preferência do banner salva no `localStorage`.
 
-O ícone compacto legado `assets/icons/favicon.svg` também foi atualizado para `LM`, mas as páginas usam `favicon-lm.svg`.
+## Congressos e atualização profissional
 
-O ícone do WhatsApp fica em:
+A seção `#congressos` contém três cards claramente marcados como conteúdo em atualização. Eles não representam eventos reais. Substitua título, ano, local, descrição e área somente depois de confirmar as informações com a médica ou a clínica.
 
-```text
-assets/icons/whatsapp.svg
-```
+As fotos devem ser colocadas em `assets/img/congressos/`. As instruções completas estão em `assets/img/congressos/README.md`.
 
-Ele não possui fundo próprio; a cor é herdada via `currentColor`, e o fundo verde pertence ao botão flutuante.
+Recomendações principais:
 
-O ícone do Instagram fica em:
+- WebP preferencial ou JPG otimizado;
+- aproximadamente 1200 px de largura;
+- proporção 4:3 ou 3:2;
+- nomes como `congresso-2024-01.webp` ou `curso-ultrassonografia-2025.webp`;
+- `loading="lazy"`, `width`, `height` e texto alternativo verdadeiro no HTML;
+- usar apenas dados e fotografias reais;
+- obter autorização antes de publicar imagens de terceiros;
+- remover metadados sensíveis quando necessário.
 
-```text
-assets/icons/instagram.svg
-```
+## Outras imagens
 
-O perfil oficial exibido no site é `@lelia.m.toledo`.
+Os arquivos `hero-placeholder.svg`, `clinic-placeholder-1.svg` e `clinic-placeholder-2.svg` ainda são placeholders. Para substituí-los, salve fotos reais otimizadas em `assets/img` e atualize os caminhos, dimensões e textos alternativos em `index.html`.
 
-Para compartilhamento em WhatsApp, Facebook e outras redes, crie futuramente uma imagem em `assets/img/og-pro-mulher.jpg`, com aproximadamente 1200 x 630 pixels. Não use diretamente a logomarca horizontal como imagem principal de compartilhamento se ela não tiver proporção adequada.
+## Checklist mobile e de conteúdo
 
-Navegadores costumam armazenar favicon em cache. Se a troca não aparecer imediatamente, atualize com `Ctrl + F5`, abra em aba anônima, limpe o cache do navegador, teste a URL direta do favicon e aguarde a atualização do GitHub Pages.
-
-## Imagens
-
-Os placeholders estão em `assets/img`:
-
-- `hero-placeholder.svg`: imagem principal da Home.
-- `clinic-placeholder-1.svg`: foto da recepção, fachada ou sala de espera.
-- `clinic-placeholder-2.svg`: foto de ambiente interno.
-
-Para trocar, salve as fotos reais em `assets/img` e atualize os caminhos no `index.html`.
-
-Exemplo:
-
-```html
-<img src="./assets/img/foto-consultorio.jpg" alt="Recepção do consultório" width="540" height="640">
-```
-
-Na seção `#clinica`, o elemento `.unimed-slot` reserva espaço para inserir uma imagem autorizada da Unimed, caso exista.
-
-## Horário de atendimento
-
-O horário oficial exibido no site é:
-
-- Segunda a quinta-feira: 8h às 16h.
-- Sexta-feira: 8h às 11h.
-
-Não há atendimento informado para sábados, domingos ou feriados.
-
-## Formulário
-
-O formulário usa FormSubmit:
-
-```html
-action="https://formsubmit.co/promulherbe@gmail.com"
-```
-
-No primeiro envio real, o FormSubmit enviará uma mensagem para `promulherbe@gmail.com` pedindo confirmação do endereço. Após confirmar, os próximos contatos chegarão normalmente por e-mail.
+- [x] Testado em 320 px
+- [x] Testado em 360 px
+- [x] Testado em 375 px
+- [x] Testado em 390 px
+- [x] Testado em 430 px
+- [x] Testado em 768 px
+- [x] Testado em 1024 px
+- [x] Menu mobile funcionando, inclusive Escape e fechamento pelos links
+- [x] Títulos sem cortes
+- [x] Sem rolagem horizontal
+- [x] Botão do WhatsApp totalmente visível
+- [x] Formulário removido
+- [x] Contatos diretos configurados
+- [x] Logo LM exibida
+- [ ] Fotos reais dos congressos adicionadas
+- [ ] Textos dos eventos revisados
+- [ ] Autorizações de imagem confirmadas
+- [ ] Mapa testado em desktop e celular
+- [ ] Caminhos testados no GitHub Pages
+- [ ] Publicação na Vercel validada
 
 ## Estrutura
 
 ```text
 assets/
   icons/
+    logo-lm.svg
   img/
+    congressos/
+      README.md
 css/
   style.css
 js/
@@ -120,29 +110,4 @@ index.html
 robots.txt
 sitemap.xml
 README.md
-```
-
-## Checklist
-
-- [ ] Logomarca oficial presente em `assets/img/logo-pro-mulher.png`
-- [ ] Favicon LM configurado em `assets/icons/favicon-lm.svg`
-- [ ] Ícone do WhatsApp configurado em `assets/icons/whatsapp.svg`
-- [ ] Ícone do Instagram configurado em `assets/icons/instagram.svg`
-- [ ] Horários oficiais revisados no site
-- [ ] Mapa testado em desktop e celular
-- [ ] Header testado em desktop amplo
-- [ ] Menu mobile testado
-- [ ] Favicon testado em aba anônima
-- [ ] Caminhos testados no GitHub Pages
-- [ ] Imagem Open Graph criada futuramente
-
-## Checklist de publicação Git
-
-```bash
-git init
-git add .
-git commit -m "Atualiza site institucional da Dra. Lélia Moreira Toledo"
-git branch -M main
-git remote add origin URL_DO_REPOSITORIO
-git push -u origin main
 ```
