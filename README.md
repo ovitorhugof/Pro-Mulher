@@ -24,15 +24,19 @@ Ele acompanha o nome “Dra. Lélia Moreira Toledo” no cabeçalho e rodapé. P
 
 Os arquivos de marca anteriores permanecem em `assets/img` apenas como backup e não devem ser reutilizados como identidade principal sem uma decisão posterior.
 
-## Marcas de terceiros
+## Logo da Unimed
 
-A marca Unimed exibida na seção da clínica usa o arquivo oficial “Unimed Sem Box”, salvo localmente em:
+A identidade da Unimed exibida no card de atendimento da seção da clínica está salva localmente em formato PNG:
 
 ```text
-assets/img/logo-unimed.png
+assets/img/convenios/logo-unimed.png
 ```
 
-O arquivo foi obtido na área pública de downloads da Unimed Divinópolis. A marca não foi redesenhada nem alterada. Como os direitos de marca não são concedidos por uma licença aberta, a clínica deve confirmar que possui autorização para exibi-la como indicação de atendimento.
+A composição foi baseada na imagem de referência fornecida para o projeto e conferida com uma reprodução pública da mesma versão vertical da marca, publicada na página de convênios do [CREF14/GO-TO](https://cref14.org.br/convenios_cref14/unimed-goiania/). A arte final preserva o fundo verde, o símbolo, o nome “Unimed”, a moldura branca, as cores e as proporções da marca.
+
+Para substituir a imagem futuramente, mantenha o mesmo nome de arquivo e uma proporção aproximada de 2:1. Caso o nome ou o formato seja alterado, atualize também a referência em `index.html`. Não estique, recorte, recolora nem aplique filtros à marca. A clínica deve confirmar que possui autorização para usar a identidade da Unimed como indicação de atendimento.
+
+## Marcas de terceiros
 
 O símbolo do WhatsApp em `assets/icons/whatsapp.svg` usa o desenho vetorial do Simple Icons. O projeto Simple Icons é distribuído sob CC0 1.0, mas essa licença não concede direitos sobre marcas registradas; o ícone é usado apenas para identificar o link oficial de contato.
 

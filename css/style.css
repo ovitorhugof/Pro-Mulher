@@ -618,12 +618,12 @@ h3 {
 }
 
 .insurance-box {
-  display: flex;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(230px, 260px);
   align-items: center;
-  justify-content: space-between;
-  gap: 18px;
+  gap: clamp(22px, 4vw, 38px);
   margin-top: 30px;
-  padding: 20px;
+  padding: clamp(20px, 3vw, 28px);
   border: 1px solid rgba(199, 161, 90, 0.28);
   border-radius: var(--radius);
   background: #fffaf2;
@@ -632,28 +632,30 @@ h3 {
 .insurance-box strong {
   display: block;
   margin-top: 4px;
-  font-size: 1.05rem;
+  font-size: 1.16rem;
+}
+
+.insurance-copy p {
+  margin: 12px 0 0;
+  color: var(--ink-muted);
+  font-size: 0.96rem;
+  line-height: 1.6;
 }
 
 .unimed-brand {
-  width: clamp(132px, 18vw, 180px);
-  min-height: 56px;
-  display: grid;
-  place-items: center;
-  padding: 10px 12px;
-  border: 1px solid rgba(0, 153, 93, 0.24);
-  border-radius: var(--radius);
-  background: #ffffff;
+  width: min(100%, 260px);
+  margin-inline: auto;
+  overflow: hidden;
+  border-radius: 16px;
+  background: transparent;
+  box-shadow: 0 16px 34px rgba(0, 78, 76, 0.18);
 }
 
 .unimed-brand img {
   display: block;
-  width: auto;
+  width: 100%;
   height: auto;
-  max-width: 100%;
-  max-height: 48px;
   object-fit: contain;
-  object-position: center;
 }
 
 .faq-section {
@@ -1100,6 +1102,16 @@ body.cookies-visible .whatsapp-float {
   }
 }
 
+@media (max-width: 1180px) {
+  .insurance-box {
+    grid-template-columns: 1fr;
+  }
+
+  .unimed-brand {
+    width: min(100%, 380px);
+  }
+}
+
 @media (max-width: 768px) {
   .whatsapp-float {
     right: calc(16px + env(safe-area-inset-right));
@@ -1250,11 +1262,19 @@ body.cookies-visible .whatsapp-float {
   .footer-bottom,
   .cookie-banner {
     align-items: stretch;
+  }
+
+  .footer-bottom,
+  .cookie-banner {
     flex-direction: column;
   }
 
+  .insurance-box {
+    grid-template-columns: 1fr;
+  }
+
   .unimed-brand {
-    width: 100%;
+    width: min(100%, 380px);
   }
 
   .map-wrap iframe {
